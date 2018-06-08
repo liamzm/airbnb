@@ -1,5 +1,4 @@
-class WelcomeController < ActionController::Base
-	include Clearance::Controller
+class WelcomeController < ApplicationController
 	def index
 	end
 end

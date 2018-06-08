@@ -3,7 +3,7 @@
   <head>
     <title>Airbnb</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <%#= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -13,7 +13,7 @@
     <div id="navbar">
   <% if signed_in? %>
     <ul class="nav navbar-nav">
-      <li><%= link_to 'Add Page', new_page_path %></li>
+      <li><%#= link_to 'Add Page', new_page_path %></li>
     </ul>
   <% end %>
 
