@@ -32,7 +32,7 @@ class SessionsController < Clearance::SessionsController
   end
 
   sign_in(user)
-  redirect_to @next, :notice => @notice
+  redirect_to 'properties/index'
 end
 
 
