@@ -3,13 +3,29 @@
   <head>
     <title>Airbnb</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <%#= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div id="navbar">
+  <% if signed_in? %>
+    <ul class="nav navbar-nav">
+      <li><%#= link_to 'Add Page', new_page_path %></li>
+    </ul>
+  <% end %>
+
+  <ul class="nav navbar-nav pull-right">
+    <% if signed_in? %>
+      <li><span><%= current_user.email %></span></li>
+      <li><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to 'Sign in', sign_in_path %></li>
+    <% end %>
+  </ul>
+</div>
     <%= yield %>
   </body>
 </html>
