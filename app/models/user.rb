@@ -2,10 +2,6 @@
 class User < ApplicationRecord
   include Clearance::User
 
-  
-  
-	include Clearance::User
-
  has_one :role
  has_many :authentications, dependent: :destroy
  has_many :properties

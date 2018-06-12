@@ -1,8 +1,7 @@
-class PropertiesController < ActionController::Base
+class PropertiesController < ApplicationController
 
 
-	def index 
-		byebug
+	def index
 		@properties = Property.page(params[:page]).per(10)
 		# @user = User.find(params[:id])
 	end

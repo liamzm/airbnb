@@ -2,6 +2,7 @@ class SessionsController < Clearance::SessionsController
 
 	def create
     @user = authenticate(params)
+    byebug
     sign_in(@user) do |status|
       if status.success?
         redirect_to "/properties"
