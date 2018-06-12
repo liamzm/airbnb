@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Airbnb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+ <p> Listings </p>
+
+ <% @properties.each do |x| %>
+   <% if x.user_id == current_user.id %> 
+   	<p> <%= x.city %></p>
+  	<p> <a href="properties/<%= x.id %>"><%= x.address %></a></p>
+  	<p> Price: <%= x.price_per_night %></p>
+  	<p> Hosted by: <%= x.user.email %></p>
+    <%= link_to 'Edit', edit_property_path(x) %>
+  <% end %>
+<% end %>
+
+<%= paginate @properties %>
+<%= page_entries_info @properties %>
+
+  </body>
+</html>

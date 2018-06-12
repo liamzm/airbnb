@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Airbnb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+  	<h2> Property: <%= @property.address %> </h2>
+  	<h3> <%= @property.city %> </h3>
+  	<p> Description: General description of the property goes here. </p>
+  	<p> Price per night: $<%= @property.price_per_night %> </p>
+
+
+
+
+
+
+
+  </body>

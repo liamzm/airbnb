@@ -32,11 +32,18 @@ gem 'figaro'
 gem 'omniauth-google-oauth2'
 
 
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
+gem 'kaminari'
 
 
 gem 'clearance'
 
 gem 'omniauth'
+
+
+
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

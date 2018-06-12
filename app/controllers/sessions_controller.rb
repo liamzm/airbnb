@@ -2,10 +2,9 @@ class SessionsController < Clearance::SessionsController
 
 	def create
     @user = authenticate(params)
-
     sign_in(@user) do |status|
       if status.success?
-        redirect_to "/listings"
+        redirect_to "/properties"
       else
         flash.now.notice = status.failure_message
         render template: "sessions/new", status: :unauthorized
@@ -21,7 +20,7 @@ class SessionsController < Clearance::SessionsController
   if authentication.user
     user = authentication.user
     authentication.update_token(auth_hash)
-    # @next = redirect_to "/listings"
+    @next = redirect_to "/properties"
     @notice = "Signed in!"
   # else: user logs in with OAuth for the first time
   else
@@ -32,7 +31,7 @@ class SessionsController < Clearance::SessionsController
   end
 
   sign_in(user)
-  redirect_to @next, :notice => @notice
+  redirect_to "/properties"
 end
 
 

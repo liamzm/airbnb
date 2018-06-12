@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "sessions", only: [:create]
 
@@ -16,6 +17,6 @@ Rails.application.routes.draw do
 
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 
-  resources :listings
+  resources :properties
 
 end
