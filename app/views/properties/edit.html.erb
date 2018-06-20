@@ -1,0 +1,39 @@
+
+
+
+
+<!-- <form action= "/properties/<%= @property.id %>" method="post">
+	<h2>Edit Property: <%= @property.address %></h2>
+    <p>Address</p><input type="text" name="address"  value="<%= @property.address %>">
+    <p>City</p><input type="text" name="city"  value="<%= @property.city %>">
+    <p>Price</p><input type="text" name="price_per_night"  value="<%= @property.price_per_night %>">
+    <br/>
+    <br/>
+    <br/>
+    <input type="submit" value="Update " name="">
+</form> -->
+
+<h1>Edit Your Property Listing</h1>
+
+
+<%= form_for @property do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :address %>
+    <%= f.text_field :address, class: 'form-control' %>
+
+    <%= f.label :city %>
+    <%= f.text_field :city, class: 'form-control' %>
+
+    <%= f.label :price_per_night %>
+    <%= f.text_field :price_per_night, class: 'form-control' %>
+
+    <%= f.label :number_of_bedrooms %>
+    <%= f.number_field :bedrooms %>
+
+    <%= f.file_field :images, :multiple => true %>
+
+    <%= f.submit "Save changes", class: "btn btn-primary" %>
+<% end %>

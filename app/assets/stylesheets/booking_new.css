@@ -1,0 +1,42 @@
+
+
+.bookings-main-container {
+	width: 95%;
+	border: 1px dotted gray;
+	margin: auto;
+
+}
+
+.bookings-images-container {
+	border: 1px dotted gray;
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	object-fit: cover;
+
+}
+
+.booking-img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+
+@media(max-width: 600px) {
+
+	.bookings-images-container {
+		width: 100%;
+	}
+
+	.bookings-images-container img {
+		width: 100%;
+		object-fit: cover;
+	}
+
+	.booking-img {
+		width: 100%;
+		object-fit: cover;
+
+	}
+}

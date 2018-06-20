@@ -1,0 +1,21 @@
+<h1>Create New Property Listing</h1>
+
+
+<%= form_for @property do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+     <%= f.label :address %>
+     <%= f.text_field :address, class: 'form-control' %>
+
+     <%= f.label :city %>
+     <%= f.text_field :city, class: 'form-control' %>
+
+     <%= f.label :price_per_night %>
+      <%= f.text_field :price_per_night, class: 'form-control' %>
+
+      <%= f.file_field :images, :multiple => true %>
+
+     <%= f.submit "Save changes", class: "btn btn-primary" %>
+<% end %>

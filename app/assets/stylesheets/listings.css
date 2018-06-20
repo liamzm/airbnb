@@ -1,0 +1,215 @@
+
+
+.properties-header-container {
+/*	border: 1px dotted gray;*/
+	width: 100%;
+	background-color: #f1f1f2;
+	display: flex;
+	flex-direction: column;
+	height: 260px;
+	align-items: center;
+
+
+}
+
+/*.header-image {
+	width: 100%;
+	object-fit: cover;
+	height: 200px;
+}*/
+
+
+#properties-top-header {
+	color: black;
+	font-size: 50px;
+/*	border: 1px dotted gray;*/
+	margin-top: 0px;
+	margin-bottom: 10px;
+	font-weight: 400;
+/*	margin-left: 100px;*/
+/*	position: absolute;*/
+}
+
+
+.header-logo {
+	width: 80px;
+/*	height: 50px;*/
+/*	border: 1px dotted gray;*/
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.property-main-image {
+  	object-fit: cover;
+  	width:370px;
+  	height:220px;
+}
+
+.city-tag {
+	color: #be1e2d;
+	font-size: 14px;
+	text-transform: uppercase;
+/*	border: 1px dotted gray;*/
+	margin-bottom: 0px;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+}
+
+.property-descriptor {
+	margin-top: 0px;
+	margin-bottom: -5px;
+}
+
+.property-descriptor a {
+	font-size: 26px;
+/*	border: 1px dotted gray;*/
+	text-decoration: none;
+	color: black;
+}
+
+.property-descriptor a:hover {
+	font-size: 26px;
+	text-decoration: none;
+	color: gray;
+	transition: 0.2s;
+}
+
+
+.main-container {
+	width: 1200px;
+/*	border: 1px dotted gray;*/
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: auto;
+}
+
+.listing-container {
+	width: 375px;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-bottom: 20px;
+}
+
+.links {
+	color: black;
+	text-decoration: none;
+	margin-right: 10px;
+	font-size: 12px;
+	color: gray;
+}
+
+.links:hover {
+	color: red;
+}
+
+
+.quick-info-container {
+	width: 100%;
+/*	border: 1px dotted gray;*/
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.quick-info-icon {
+	width: 15px;
+	height: 15px;
+	margin-top: 3px;
+/*	border: 1px dotted gray;*/
+}
+
+.quick-info-text {
+/*	border: 1px dotted gray;*/
+	margin-top: 0px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 20px;
+}
+
+#verified-text {
+	color: #8cc63e;
+}
+
+#bedrooms {
+	color: #be1e2d;
+}
+
+
+
+
+
+/*RESPONSIVE STUFF BELOW*/
+
+/*First breakpoint*/
+
+@media(max-width: 1000px) {
+	
+
+
+	.main-container {
+		width: 100%;
+	}
+
+	.listing-container {
+		width: 30%;
+		margin-right: 10px;
+		margin-left: 10px;
+		align-items: center;
+	}
+
+	.property-main-image {
+/*  		object-fit: cover;*/
+  		width: 100%;
+/*  	height:220px;*/
+	}
+}
+
+
+
+/*Second breakpoint*/
+
+
+@media(max-width: 768px) {
+	
+	.main-container {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.listing-container {
+		width: 45%;
+	}
+
+	#properties-top-header {
+		font-size: 40px;
+	}
+
+
+}
+
+
+/*Third breakpoint*/
+
+
+@media(max-width: 500px) {
+	
+	.main-container {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.listing-container {
+		width: 100%;
+	}
+
+	#properties-top-header {
+		font-size: 30px;
+	}
+}
+
+
+
+
+
+

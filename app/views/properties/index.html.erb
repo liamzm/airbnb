@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Airbnb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+ 
+<!-- Header here -->
+
+ <div class="properties-header-container">
+
+
+    <img class='header-logo' src = '/logo2.png' />
+
+    <h3 id="properties-top-header"> Find Your Dream <strong>Holiday Home</strong> </h3>
+
+    <p class="form-label">Search Locations</p>
+
+    <form><input type="text" class="sign-in-form"></form>
+
+  </div>
+
+ <div class="main-container">
+
+<!--   PROPERTIES LOOP -->
+
+   <% @properties.each do |x| %>
+
+       <div class="listing-container">
+
+
+         
+         	<p class="city-tag"> <%= x.city %></p>
+
+          <img class="property-main-image" src ="<%= x.images[0].thumb.url%>" />
+
+          <h2 class="property-descriptor"> <a href="properties/<%= x.id %>"><%= x.name %></a></h2>
+        	
+          <p> <strong>$<%= x.price_per_night %></strong> per night</p>
+
+
+          <!-- Verified icon appear or not -->
+
+          <div class="quick-info-container">
+
+              <% if x.verified_status == true %>
+                  
+                  <img class="quick-info-icon" src = "/verified_icon.png" />
+                  
+                  <p class="quick-info-text" id="verified-text">Verified</p>
+
+              <% end %>
+
+          <!--   Number of bedrooms -->
+
+              <img class="quick-info-icon" src = "/bedroom_icon.png" />
+
+
+              <% if x.bedrooms == 1 %>
+                  
+                  <p class="quick-info-text" id="bedrooms"><%= x.bedrooms %> Bedroom</p>
+             
+              <% elsif x.bedrooms > 1 %>
+                  
+                  <p class="quick-info-text" id="bedrooms"><%= x.bedrooms %> Bedrooms</p>
+              
+              <%end%>
+
+
+          </div>
+
+          <% if current_user != nil %>
+
+          
+          <% if x.user_id == current_user.id %> 
+            <%= link_to 'Edit Listing', edit_property_path(x), :class => 'links'  %>
+          <% end %>
+          
+          <% if current_user.user_type == "moderator" %>
+            
+            <%= link_to 'Delete', 
+                                property_path(x),  
+                                method: :delete, :class => 'links' %>
+            <%= link_to 'Verify', verify_property_path(x), :class => 'links', method: :post %>
+            <%= link_to 'Edit Listing', edit_property_path(x), :class => 'links' %>
+
+          <% end %>
+          <% end %>
+
+        </div>  
+    <% end %>
+
+</div>
+
+
+<%= paginate @properties %>
+<%= page_entries_info @properties %>
+
+  </body>
+</html>

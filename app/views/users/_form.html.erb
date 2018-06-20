@@ -1,9 +1,35 @@
-<div class="text-field">
-  <%= form.label :email %>
-  <%= form.text_field :email, type: 'email' %>
+<div>
+	<p class="form-label">First Name</p>
+	<%= form.text_field :first_name, :class => 'sign-in-form' %>
+
 </div>
 
-<div class="password-field">
-  <%= form.label :password %>
-  <%= form.password_field :password %>
+<div>
+	<p class="form-label">Last Name</p>
+	<%= form.text_field :last_name, :class => 'sign-in-form'  %>
 </div>
+
+<div>
+	<p class="form-label">Email</p>
+	<%= form.text_field :email, type: 'email', :class => 'sign-in-form' %>
+</div>
+
+<div>
+	<p class="form-label">Create Password</p>
+	<%= form.password_field :password, :class => 'sign-in-form' %>
+</div>
+
+<div class="upload-container">
+
+	<div class="signup-divider"></div>
+
+	<div>
+		<p class="form-label">Upload a Profile Picture</p>
+		<%= form.file_field :avatar %>
+	</div>
+
+	<div class="signup-divider"></div>
+
+</div>
+
+

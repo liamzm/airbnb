@@ -1,12 +1,19 @@
 
-
-
-
 class User < ApplicationRecord
-	include Clearance::User
+  include Clearance::User
 
-	has_one :role
+  # attr_accessible :image
+
+ has_one :role
  has_many :authentications, dependent: :destroy
+ has_many :properties
+ has_many :bookings
+
+ enum user_type: [:customer, :moderator, :admin]
+ mount_uploader :avatar, AvatarUploader
+
+ # uploader = AvatarUploader.new
+ # uploader.store()
 
  def self.create_with_auth_and_hash(authentication, auth_hash)
    user = self.create!(

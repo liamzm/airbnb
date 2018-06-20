@@ -13,3 +13,201 @@
  *= require_tree .
  *= require_self
  */
+body {
+	font-family:'Source Sans Pro', sans-serif;
+	margin: 0px;
+	margin-right: 0px;
+}
+
+p {
+	font-weight: 400;
+}
+
+
+
+#sign-in-page-header-container {
+	width: 100%;
+/*	border: 1px dotted gray;*/
+/*	margin-left: 20px;*/
+	display: flex;
+	justify-content: center;
+	box-sizing: border-box;
+}
+
+/*.logo {
+	width: 70px;
+	height: 70px;
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+*/
+.large-header {
+	font-size: 45px;
+/*	text-transform: uppercase;*/
+	font-weight: 400;
+	text-align: center;
+/*	letter-spacing: 2px;*/
+}
+
+.sign-in-container {
+/*	margin-left: 20px;*/
+/*	border: 1px dotted gray;*/
+	display: flex;
+	align-items: center;
+	margin-bottom: 30px;
+	flex-direction: column;
+}
+
+.sign-in-form {
+	width: 300px;
+	height: 30px;
+	border: 1px solid lightgray;
+/*	border-radius: 2px;*/
+	margin-bottom: 10px;
+	font-size: 15px;
+	font-weight: 400;
+	padding-left: 5px;
+	box-sizing: border-box;
+}
+
+.form-label {
+/*	text-transform: uppercase;*/
+/*	border: 1px dotted gray;*/
+	margin: 0px;
+	color: #808284;
+}
+
+.login-button-container {
+	width: 100%;
+/*	border: 1px dotted gray;*/
+}
+
+.login-button {
+	background-color: #8cc63e;
+	width: 100px;
+	height: 50px;
+	font-size: 15px;
+	border: 0px;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+.login-button:hover {
+	background-color: #517a37;
+	transition: 0.2s;
+}
+
+.login-extras-container {
+	width: 100%;
+/*	border: 1px dotted gray;*/
+	padding-left: 20px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 10px;
+	margin-top: -10px;
+/*	align-items: center;*/
+}
+
+.login-extras-container img {
+	margin-right: 10px;
+	justify-content: center;
+}
+
+.login-extras-container:hover {
+	opacity: 0.7;
+	transition: 0.2s;
+}
+
+.other-links {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-decoration: none;
+	color: black;
+}
+
+.forgot-password {
+	color: #808284;
+	text-decoration: none;
+	box-sizing: border-box;
+	margin-left: 30px;
+	margin-top: 80px;
+}
+
+.forgot-password:hover {
+	color: black;
+	text-decoration: none;
+}
+
+.google-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.google-sign-in {
+	width: 300px;
+/*	background-color: #f7931d;*/
+/*	padding: 5px;*/
+	box-sizing: border-box;
+	color: #f7931d;
+	text-decoration: none;
+}
+
+.google-sign-in:hover {
+	color: gray;
+}
+
+.login-divider {
+	width: 175px;
+	height: 1px;
+	background-color: #bbbdc0;
+	margin-top: 15px;
+	margin-bottom: 17px;
+	margin-left: -150px;
+/*	margin-left: 20px;*/
+/*	margin: auto;*/
+}
+
+.sign-up-button {
+	color: black;
+	text-decoration: none;
+	font-size: 25px;
+	margin-top: 10px;
+}
+
+.sign-up-button:hover {
+	color: #808284;
+	transition: 0.2s;
+	text-decoration: none;
+	font-size: 25px;
+	margin-top: 10px;
+}
+
+.google-icon {
+	width: 20px;
+	height: 20px;
+}
+
+.upload-container {
+	margin-top: 20px;
+	margin-bottom: 20px;
+/*	border: 1px dotted gray;*/
+}
+
+.signup-divider {
+	height: 1px;
+	width: 100%;
+	background-color: lightgray;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.signup-container {
+/*	border: 1px dotted gray;*/
+	margin: auto;
+	width: 300px;
+}

@@ -1,6 +1,39 @@
-<div id="clearance" class="sign-in">
-  <h2><%= t(".title") %></h2>
+    <div id="sign-in-page-header-container">
+<!--       <img class="logo" src="logo.png" /> -->
+      <h3 class="large-header">Sign in to <strong>LiamBNB</strong></h3>
+    </div>
 
-  <%= render partial: '/sessions/form' %>
 
-</div>
+    <% if signed_in? %>
+
+    <% else %>
+
+      <div class="sign-in-container">
+
+        <%= render partial: '/sessions/form' %>
+
+      </div>
+
+
+
+      <div class="login-extras-container">
+        <div class="login-divider"></div>
+        <div class="google-container">     
+          <a href="/auth/google_oauth2"><img class="google-icon" src="google_icon.png"  /></a>
+          <%= link_to "Sign in with Google", "/auth/google_oauth2", :class => 'google-sign-in' %>
+        </div>
+        <div class="login-divider"></div>
+      </div>
+
+
+
+
+      </div>
+
+      <div class="login-extras-container">
+        
+        <%= link_to "Don't have an account? Sign Up", sign_up_path, :class => 'sign-up-button'  %>
+
+      </div>
+
+    <% end %>

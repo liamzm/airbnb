@@ -7,25 +7,48 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900" rel="stylesheet">
+
+<!--     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="payments.scss"
+ -->
+
+
   </head>
 
   <body>
-    <div id="navbar">
-  <% if signed_in? %>
-    <ul class="nav navbar-nav">
-      <li><%#= link_to 'Add Page', new_page_path %></li>
-    </ul>
-  <% end %>
+    <div id="navbar-container">
+      <div class="navbar-items">
 
-  <ul class="nav navbar-nav pull-right">
-    <% if signed_in? %>
-      <li><span><%= current_user.email %></span></li>
-      <li><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
-    <% else %>
-      <li><%= link_to 'Sign in', sign_in_path %></li>
-    <% end %>
-  </ul>
-</div>
+         <%= link_to 'Properties', properties_path %>
+        <% if signed_in? %>
+
+          <p class='navbar-link'><%= current_user.email %></p>
+          <%= link_to 'My Account', user_path(current_user), :class => 'navbar-link' %>
+          <%= image_tag current_user.avatar_url(:thumb).to_s, :class => 'profile-pic-thumb'%>
+ <!--                <%= current_user.email %> -->
+
+      <%= link_to 'Sign out', sign_out_path, method: :delete %>
+      <%= link_to 'New Property Listing', new_property_path %>
+
+
+        <% else %>
+
+          <%= link_to 'Sign In', sign_in_path  %>
+
+
+
+        <% end %>
+
+      </div>
+    </div>
+
+    <div id="spacer"></div>
+
     <%= yield %>
   </body>
 </html>

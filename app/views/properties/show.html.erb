@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Airbnb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+
+
+<div class="main-container">
+
+<!-- Info + text container here -->
+
+<h2 class="name-large"> <%= @property.name %> </h2>
+
+
+  <div class="info-container">
+
+      <p class="city-tag-large"> <%= @property.city %> </p>
+
+
+  <div class="quick-info-container">
+
+    <div class="quick-info-entry">
+
+    <% if @property.verified_status == true %>
+
+      <img class="quick-info-icon" src = "/verified_icon.png" />
+                  
+      <p class="quick-info-text" id="verified-text">Verified</p>
+
+
+
+     <% end %>
+
+         </div>
+
+     <div class="quick-info-entry">
+
+        <img class="quick-info-icon" src = "/bedroom_icon.png" />
+    
+            <% if @property.bedrooms == 1 %>
+                  
+            <p class="quick-info-text" id="bedrooms"><%= @property.bedrooms %> Bedroom</p>
+             
+            <% elsif @property.bedrooms > 1 %>
+                  
+            <p class="quick-info-text" id="bedrooms"><%= @property.bedrooms %> Bedrooms</p>
+
+
+              
+    <%end%>
+          </div>
+  </div>
+
+  	<p> Address: <strong><%= @property.address %></strong> </p>
+
+
+    <div class="divider"></div>
+
+    <h3>About this property</h3>
+  	<p> General description of the property goes here. Information can include general tips about transportation, views, distance from aiport, etc. </p>
+
+
+    <h3>About the host</h3>
+    <div class="quick-info-container">
+        <div id = 'host-thumbnail'></div>
+      <p class="hostname"><%= @property.user.first_name %></p>
+    </div>
+
+
+    <div class="divider"></div>
+  	
+
+    <p class="price"> <strong>$<%= @property.price_per_night %></strong> per night </p>
+
+
+    <% if current_user == nil %>
+
+            <div class="booking-button-container">
+
+        <%= link_to 'Book This Property', sign_in_path, :class => 'booking-button' %>
+
+      </div>
+
+    <% end %>
+
+
+
+    
+
+    <% if current_user != nil %>
+
+      <div class="booking-button-container">
+
+        <%= link_to 'Book This Property', new_property_booking_path(@property), :class => 'booking-button' %>
+
+      </div>
+
+    <% if @property.user_id == current_user.id %> 
+      <%= link_to 'Edit', edit_property_path(@property) %>
+
+    <% end %>
+    
+    <% if current_user.user_type == "moderator" %>
+      <%= link_to 'Delete', 
+                        property_path(@property), :class => 'links',
+                        method: :delete %>
+      <%= link_to 'Verify', verify_property_path(@property), :class => 'links', method: :post %>
+
+      <%= link_to 'Edit', edit_property_path(@property), :class => 'links'  %>
+
+
+    <% end %>  
+    <% end %>  
+
+
+
+  </div>
+
+
+<!--   Images container here -->
+
+  <div class="images-container">
+
+      <img class="dom-img" src = "<%= @property.images.first %>" />
+
+      <div class="secondary-images-container">
+
+          <% if @property.images.second != nil %>
+
+              <img src = "<%= @property.images.second %>" />
+
+          <% end %>
+
+          <% if @property.images.third != nil %>
+
+              <img src = "<%= @property.images.third %>" />
+
+          <% end %>
+      
+
+      </div>
+
+
+
+      
+
+
+
+
+  </div>
+
+</div>
+
+
+
+
+
+
+  </body>

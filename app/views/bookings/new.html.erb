@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Airbnb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+
+
+
+
+<div class="bookings-main-container">
+
+<h1 class="name-large">Book this property</h1>
+
+  <div class="bookings-images-container">
+
+      <img class="booking-img" src = "<%= @property.images.first %>" />
+
+
+  </div>
+
+<h3><%= @property.name %></h3>
+<p><%= @property.address %></p>
+
+<%= form_for [@property, @booking] do |f| %>
+
+     <%= f.label :check_in_date %>
+     <%= f.date_field :check_in_date %>
+
+     <%= f.label :check_out_date %>
+     <%= f.date_field :check_out_date %>
+
+     <%= f.submit "Submit Booking" %>
+
+<% end %>
+
+</div>
+</body>
+

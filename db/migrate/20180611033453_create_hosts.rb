@@ -7,8 +7,6 @@ class CreateHosts < ActiveRecord::Migration[5.2]
       t.string :email, null: false
       # t.integer :date_of_birth, , null: false
       t.string :encrypted_password, limit: 128, null: false
-      t.string :confirmation_token, limit: 128
-      t.string :remember_token, limit: 128, null: false
     end
 
     add_index :hosts, :email

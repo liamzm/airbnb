@@ -1,0 +1,7 @@
+
+
+<h2> My Account </h2>
+
+<h3> <%= current_user.first_name %> <%= current_user.last_name %> </h3>
+<p> Email: <%= current_user.email %> </p>
+<p> <%= link_to 'Edit Account Information', edit_user_path(current_user) %> </p>

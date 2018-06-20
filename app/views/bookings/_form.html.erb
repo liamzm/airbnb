@@ -1,0 +1,14 @@
+<h1>Book this property</h1>
+
+
+<%= form_for [@property, @booking] do |f| %>
+
+     <%= f.label :check_in_date %>
+     <%= f.date_field :check_in_date %>
+
+     <%= f.label :check_out_date %>
+     <%= f.date_field :check_out_date %>
+
+     <%= f.submit "Submit Booking" %>
+<% end %>
+
