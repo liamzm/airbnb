@@ -14,3 +14,12 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// $("#nav-dropdown").hide();
+
+$(".mobile-dropdown-button").click(function() {
+
+	$("#nav-dropdown").toggle(300);
+
+
+});

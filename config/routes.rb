@@ -32,6 +32,12 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :braintree
+
+  get "/bookings/:id/braintree/new" => "braintree#new", as: "new_payment"
+
+  post "/bookings/:id/braintree/checkout" => "braintree#checkout", as: "braintree_checkout"
+
   # get "/users/:id/edit" => "users#edit", as: "my_account"
 
   # post "users/:id/update" => "users#update", as: "update_account"

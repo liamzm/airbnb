@@ -8,6 +8,12 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <!-- Load the Client component. -->
+    <script src="https://js.braintreegateway.com/web/3.6.3/js/client.min.js"></script>
+
+    <!-- Load the Hosted Fields component. -->
+    <script src="https://js.braintreegateway.com/web/3.6.3/js/hosted-fields.min.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900" rel="stylesheet">
@@ -22,33 +28,154 @@
 
   <body>
     <div id="navbar-container">
-      <div class="navbar-items">
+      <div id="navbar-content">
+        <div class="logo-site-name-container">
 
-         <%= link_to 'Properties', properties_path %>
-        <% if signed_in? %>
+          <img class='navbar-logo' src = '/logo6.png' />
 
-          <p class='navbar-link'><%= current_user.email %></p>
-          <%= link_to 'My Account', user_path(current_user), :class => 'navbar-link' %>
-          <%= image_tag current_user.avatar_url(:thumb).to_s, :class => 'profile-pic-thumb'%>
- <!--                <%= current_user.email %> -->
+          <h2 id="sitename"><a href="/">Liam<strong>BNB</strong></a></h2>
 
-      <%= link_to 'Sign out', sign_out_path, method: :delete %>
-      <%= link_to 'New Property Listing', new_property_path %>
+        </div>
+<!-- 
+        <div class="navbar-divider"></div> -->
 
+        <div class="empty-box"></div>
 
-        <% else %>
+        <div class="navbar-items">
 
-          <%= link_to 'Sign In', sign_in_path  %>
-
+          <% if signed_in? %>
 
 
-        <% end %>
+            <%= image_tag current_user.avatar_url(:thumb).to_s, :class => 'profile-pic-thumb'%>
+   <!--          <p class='username'><%= current_user.email %></p> -->
+            <%= link_to 'My Account', user_path(current_user), :class => 'navbar-link' %>
+
+
+
+           <div class="navbar-divider"></div>
+                  
+                  <%= link_to 'New Property Listing', new_property_path, :class => 'navbar-link' %>
+
+           <div class="navbar-divider"></div>
+            
+   <!--                <%= current_user.email %> -->
+
+                <%= link_to 'Sign out', sign_out_path, :class => 'navbar-link', method: :delete %>
+
+            <div class="navbar-divider"></div>
+
+
+          <% else %>
+
+            <%= link_to 'SIGN IN', sign_in_path, :class => 'navbar-link'  %>
+
+          <% end %>
+
+        </div>
+
+        <div id="mobile-dropdown-button-container">
+
+          <div class="mobile-dropdown-button"></div>
+          <div class="mobile-dropdown-button"></div>
+          <div class="mobile-dropdown-button"></div>
+
+
+        </div>
+
 
       </div>
+
     </div>
 
-    <div id="spacer"></div>
+<!--     <div id="spacer"></div> -->
+
+<!-- DROPDOWN MENU BELOW -->
+
+    <div id="nav-dropdown" class="mobile-dropdown-navbar">
+
+        <div class="filler"></div>
+
+      <% if signed_in? %>
+
+
+
+        <div class="account-container">
+          
+          <%= image_tag current_user.avatar_url(:thumb).to_s, :class => 'profile-pic-thumb'%>
+ <!--          <p class='username'><%= current_user.email %></p> -->
+          <%= link_to 'My Account', user_path(current_user), :class => 'my-account-link' %>
+          <p class="username-dropdown"> Signed in as <strong><%= current_user.email %> </strong></p>
+
+        </div>
+
+<!--         <div class="horizontal-divider"></div> -->
+
+          <%= link_to 'New Property Listing', new_property_path, :class => 'nav-dropdown-link' %>
+
+<!--         <div class="horizontal-divider"></div> -->
+
+          <%= link_to 'Sign out', sign_out_path, :class => 'nav-dropdown-link', method: :delete %>
+<!-- 
+          <div class="filler"></div>
+          <div class="bottom-border"></div>
+          <div class="bottom-border"></div>
+          <div class="bottom-border"></div>
+          <div class="bottom-border"></div> -->
+
+          <% else %>
+
+          <div class="filler"></div>
+
+          <%= link_to 'SIGN IN', sign_in_path, :class => 'nav-dropdown-link'  %>
+
+          <%= link_to 'New Property Listing', sign_in_path, :class => 'nav-dropdown-link' %>
+
+
+
+
+
+      <% end %>
+
+
+
+
+
+<!--           <div id="horizontal-divider"></div> -->
+    </div>
+
+
+
+
+   <!--  mobile dropdown script below -->
+
+
+
+
+    <div class="filler"></div>
+    <div id="filler-mobile"></div>
+
 
     <%= yield %>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" 
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
+    crossorigin="anonymous"></script>
+
+<!--     <script src="application.js"></script> -->
+
+    <script>
+
+    $("#nav-dropdown").hide();
+    // $("#filler-mobile").hide();
+
+    $("#mobile-dropdown-button-container").click(function() {
+        // e.preventDefault();
+        $("#nav-dropdown").toggle();
+        $("#filler-mobile").toggle();
+
+
+    });
+
+  </script>
   </body>
 </html>

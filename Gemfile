@@ -47,6 +47,10 @@ gem 'carrierwave', '~> 1.0'
 
 gem 'mini_magick'
 
+gem 'validates_overlap'
+
+gem 'sidekiq'
+
 
 
 

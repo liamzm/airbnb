@@ -1,10 +1,14 @@
 class SessionsController < Clearance::SessionsController
 
-	def create
+
+
+
+  def create
     @user = authenticate(params)
     sign_in(@user) do |status|
       if status.success?
-        redirect_to "/properties"
+        redirect_to :root
+
       else
         flash.now.notice = status.failure_message
         render template: "sessions/new", status: :unauthorized

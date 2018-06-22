@@ -8,6 +8,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -43,7 +45,11 @@
      <%= f.submit "Submit Booking" %>
 
 <% end %>
-
+    
+    <% flash.each do |x, y| %>
+      <p class="error-message" id="<%= x %>"><%= y %></p>
+    <% end %>
+    
 </div>
 </body>
 

@@ -23,7 +23,12 @@ p {
 	font-weight: 400;
 }
 
-
+.error-message {
+	margin-top: 25px;
+	color: red;
+	font-weight: 700;
+	font-size: 20px;
+}
 
 #sign-in-page-header-container {
 	width: 100%;
@@ -32,6 +37,7 @@ p {
 	display: flex;
 	justify-content: center;
 	box-sizing: border-box;
+	margin-top: 50px;
 }
 
 /*.logo {
@@ -210,4 +216,64 @@ p {
 /*	border: 1px dotted gray;*/
 	margin: auto;
 	width: 300px;
+}
+
+
+/*Payments css*/
+
+
+
+.payment-form-container {
+	width: 500px;
+	margin: auto;
+	margin-top: 60px;
+}
+
+.total-price {
+	font-size: 23px;
+	margin-bottom: 50px;
+}
+
+
+.payment-form {
+	width: 400px;
+	height: 40px;
+	border: 1px solid lightgray;
+/*	border-radius: 2px;*/
+	margin-bottom: 10px;
+	font-size: 15px;
+	font-weight: 400;
+	padding-left: 5px;
+	box-sizing: border-box;
+}
+
+
+.payment-form-label {
+	color: #808284;
+	border: 1px dotted gray;
+}
+
+
+.payment-button-container {
+	width: 100%;
+/*	border: 1px dotted gray;*/
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.payment-button {
+	background-color: #be1e2d;
+	width: 400px;
+	height: 50px;
+	font-size: 15px;
+	border: 0px;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+	box-sizing: border-box;
+	padding-top: 2px;
+	padding-left: 20px;
+	margin-top: 30px;
 }

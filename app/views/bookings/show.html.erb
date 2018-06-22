@@ -1,1 +1,38 @@
-<h2> Your booking is confirmed </h2>
+
+
+
+<h1> Your reservation </h1>
+
+
+<h2> Details </h2>
+
+
+<%= @booking.property.name %>
+<%= @booking.property.address %>
+<p> Check in date: <strong> <%= @booking.check_in_date.to_date %> </strong> </p>
+<p> Check out date: <strong> <%= @booking.check_out_date.to_date %> </strong> </p>
+<p> Total Nights: <strong> <%= @nights %> </strong> </h3>
+
+<p> Total Price: <strong> $<%= @price %> </strong></p>
+
+
+
+ <div class="booking-button-container">
+
+	<% if @booking.payment_status != true %>
+
+		<h2> Proceed to payment to confirm your reservation </h2>
+		
+		<%= link_to "Make Payment", new_payment_path, :class => 'payment-button' %>
+
+	<% end %>
+
+	<% if @booking.payment_status == true %>
+
+		<h2> Thank you for your payment. </h2>
+
+		<p> Your booking is confirmed. Your booking number is: <%= @booking.id %> </p>
+
+	<% end %>
+
+</div>

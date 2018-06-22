@@ -8,6 +8,7 @@
 	flex-direction: column;
 	height: 260px;
 	align-items: center;
+/*	margin-top: 20px;*/
 
 
 }
@@ -26,6 +27,7 @@
 	margin-top: 0px;
 	margin-bottom: 10px;
 	font-weight: 400;
+	text-align: center;
 /*	margin-left: 100px;*/
 /*	position: absolute;*/
 }
@@ -143,7 +145,7 @@
 
 /*First breakpoint*/
 
-@media(max-width: 1000px) {
+@media(max-width: 1024px) {
 	
 
 
@@ -152,7 +154,7 @@
 	}
 
 	.listing-container {
-		width: 30%;
+		width: 31%;
 		margin-right: 10px;
 		margin-left: 10px;
 		align-items: center;
@@ -192,15 +194,17 @@
 /*Third breakpoint*/
 
 
-@media(max-width: 500px) {
+@media(max-width: 600px) {
 	
 	.main-container {
 		width: 100%;
 		justify-content: center;
+		margin-left: 0px;
 	}
 
 	.listing-container {
 		width: 100%;
+		margin-left: 0px;
 	}
 
 	#properties-top-header {
