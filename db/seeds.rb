@@ -38,6 +38,8 @@ ActiveRecord::Base.transaction do
 
     property['user_id'] = uids.sample
 
+    property['bedrooms'] = rand(1..5)
+
     Property.create(property)
   end
 end
