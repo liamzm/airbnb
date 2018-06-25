@@ -51,6 +51,10 @@ gem 'validates_overlap'
 
 gem 'sidekiq'
 
+gem 'letter_opener'
+
+gem 'launchy'
+
 
 
 

@@ -18,6 +18,28 @@
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900" rel="stylesheet">
 
+<!--         <script src="https://code.jquery.com/jquery-3.3.1.js" 
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
+    crossorigin="anonymous"></script> -->
+
+
+<!--     Datepicker stylesheets -->
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <script>
+
+    </script>
+
+<!--     <script src="https://code.jquery.com/jquery-3.3.1.js" 
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
+    crossorigin="anonymous"></script> -->
+
 <!--     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
     <link rel="stylesheet" href="payments.scss"
@@ -43,6 +65,8 @@
 
         <div class="navbar-items">
 
+          <div class="navbar-divider"></div>
+
           <% if signed_in? %>
 
 
@@ -53,6 +77,9 @@
 
 
            <div class="navbar-divider"></div>
+
+
+                  <img class="navbar-icon" src='/property.png' />
                   
                   <%= link_to 'New Property Listing', new_property_path, :class => 'navbar-link' %>
 
@@ -60,12 +87,27 @@
             
    <!--                <%= current_user.email %> -->
 
+                <img class="navbar-icon" id="sign-out-large" src='/sign_out.png' />
+
                 <%= link_to 'Sign out', sign_out_path, :class => 'navbar-link', method: :delete %>
 
             <div class="navbar-divider"></div>
 
 
           <% else %>
+
+
+
+                  <img class="navbar-icon" src='/property.png' />
+                  
+                  <%= link_to 'New Property Listing', sign_in_path, :class => 'navbar-link' %>
+
+
+
+            <div class="navbar-divider"></div>
+
+
+            <img class="navbar-icon" id="sign-out-large" src='/sign_in.png' />
 
             <%= link_to 'SIGN IN', sign_in_path, :class => 'navbar-link'  %>
 
@@ -99,9 +141,9 @@
 
 
 
-        <div class="account-container">
+        <div id="account-items-container">
           
-          <%= image_tag current_user.avatar_url(:thumb).to_s, :class => 'profile-pic-thumb'%>
+          <%= image_tag current_user.avatar_url(:thumb).to_s, :class => 'profile-pic-thumb-dropdown'%>
  <!--          <p class='username'><%= current_user.email %></p> -->
           <%= link_to 'My Account', user_path(current_user), :class => 'my-account-link' %>
           <p class="username-dropdown"> Signed in as <strong><%= current_user.email %> </strong></p>
@@ -109,13 +151,25 @@
         </div>
 
 <!--         <div class="horizontal-divider"></div> -->
+<!--           <img class="navbar-icon" src='/property.png' /> -->
+
+        <div class="dropdown-items-container">
+
+          <img class="navbar-dropdown-icon" src='/property.png' />
 
           <%= link_to 'New Property Listing', new_property_path, :class => 'nav-dropdown-link' %>
 
+        </div>
 <!--         <div class="horizontal-divider"></div> -->
 
+        <div class="dropdown-items-container">
+
+          <img class="navbar-dropdown-icon" id="sign-out" src='/sign_out.png' />
+
           <%= link_to 'Sign out', sign_out_path, :class => 'nav-dropdown-link', method: :delete %>
-<!-- 
+
+        </div>
+<!--     
           <div class="filler"></div>
           <div class="bottom-border"></div>
           <div class="bottom-border"></div>
@@ -126,9 +180,21 @@
 
           <div class="filler"></div>
 
-          <%= link_to 'SIGN IN', sign_in_path, :class => 'nav-dropdown-link'  %>
+          <div class="dropdown-items-container">
 
-          <%= link_to 'New Property Listing', sign_in_path, :class => 'nav-dropdown-link' %>
+            <img class="navbar-dropdown-icon" src='/sign_in.png' />
+
+            <%= link_to 'SIGN IN', sign_in_path, :class => 'nav-dropdown-link'  %>
+
+          </div>
+
+          <div class="dropdown-items-container">
+
+            <img class="navbar-dropdown-icon" src='/property.png' />
+
+            <%= link_to 'New Property Listing', sign_in_path, :class => 'nav-dropdown-link' %>
+
+          </div>
 
 
 
@@ -157,25 +223,10 @@
 
     <%= yield %>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js" 
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
-    crossorigin="anonymous"></script>
+
 
 <!--     <script src="application.js"></script> -->
 
-    <script>
 
-    $("#nav-dropdown").hide();
-    // $("#filler-mobile").hide();
-
-    $("#mobile-dropdown-button-container").click(function() {
-        // e.preventDefault();
-        $("#nav-dropdown").toggle();
-        $("#filler-mobile").toggle();
-
-
-    });
-
-  </script>
   </body>
 </html>

@@ -10,8 +10,8 @@ class BraintreeController < ApplicationController
 
 	  @booking = Booking.find(params[:id])
 	  @price = ((@booking.check_out_date.to_date - @booking.check_in_date.to_date).to_i) * @booking.property.price_per_night.to_i
-
-
+	  @user = @booking.user
+	  
 	  result = Braintree::Transaction.sale(
 	   :amount => ((@booking.check_out_date.to_date - @booking.check_in_date.to_date).to_i) * @booking.property.price_per_night.to_i,
 	   :payment_method_nonce => nonce_from_the_client,
@@ -23,6 +23,7 @@ class BraintreeController < ApplicationController
 	  if result.success?
 	  	@booking.payment_status = true
 	  	@booking.save
+	  	ReservationMailer.reservation_email(@user).deliver
 	    redirect_to booking_path(@booking.id)
 	  else
 	    redirect_back(fallback_location: root_path)

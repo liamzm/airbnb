@@ -38,6 +38,9 @@ Rails.application.routes.draw do
 
   post "/bookings/:id/braintree/checkout" => "braintree#checkout", as: "braintree_checkout"
 
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+
   # get "/users/:id/edit" => "users#edit", as: "my_account"
 
   # post "users/:id/update" => "users#update", as: "update_account"

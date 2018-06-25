@@ -6,6 +6,11 @@
     <%= csp_meta_tag %>
 
 
+
+
+
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -59,7 +64,7 @@
 
               
     <%end%>
-          </div>
+        </div>
   </div>
 
   	<p> Address: <strong><%= @property.address %></strong> </p>
@@ -86,11 +91,11 @@
 
     <% if current_user == nil %>
 
-            <div class="booking-button-container">
+        <div class="booking-button-container">
 
-        <%= link_to 'Book This Property', sign_in_path, :class => 'booking-button' %>
+          <%= link_to 'Book This Property', sign_in_path, :class => 'booking-button', :id => 'booking-button-fixed' %>
 
-      </div>
+        </div>
 
     <% end %>
 
@@ -100,32 +105,67 @@
 
     <% if current_user != nil %>
 
-      <div class="booking-button-container">
+    <h3>Check property availablility</h3>
 
-        <%= link_to 'Book This Property', new_property_booking_path(@property), :class => 'booking-button' %>
+      <div class="booking-dates-container">
+
+          <%= form_for [@property, @booking] do |f| %>
+
+            <div class="booking-dates-container-inset">
+
+              <img class="calendar-icon" src = "/calendar.png" />
+
+               <%= f.label :check_in_date, :class => "dates-label" %>
+                  <div class="check-in-filler"></div>
+               <%= f.text_field :check_in_date, :placeholder => "Select date", :id => "check-in-date" %>
+
+            </div>
+
+            <div class="booking-dates-container-inset">
+
+              <img class="calendar-icon" src = "/calendar.png" />
+
+               <%= f.label :check_out_date, :class => "dates-label" %>
+                  <div class="check-out-filler"></div>
+               <%= f.text_field :check_out_date, :placeholder => "Select date", :id => "check-out-date" %>
+
+            </div>
+            <div class="booking-dates-container-inset"></div>
+            <div class="booking-dates-container-inset"></div>
+
+               <%= f.submit "Book This Property", :class => 'booking-button' %>
+
+
+
+          <% end %>
 
       </div>
 
+
+
     <% if @property.user_id == current_user.id %> 
-      <%= link_to 'Edit', edit_property_path(@property) %>
+      
+        <%= link_to 'Edit', edit_property_path(@property) %>
 
     <% end %>
     
     <% if current_user.user_type == "moderator" %>
-      <%= link_to 'Delete', 
+      
+        <%= link_to 'Delete', 
                         property_path(@property), :class => 'links',
                         method: :delete %>
-      <%= link_to 'Verify', verify_property_path(@property), :class => 'links', method: :post %>
+        <%= link_to 'Verify', verify_property_path(@property), :class => 'links', method: :post %>
 
-      <%= link_to 'Edit', edit_property_path(@property), :class => 'links'  %>
+        <%= link_to 'Edit', edit_property_path(@property), :class => 'links'  %>
 
 
     <% end %>  
-    <% end %>  
+
+<% end %>  
 
 
 
-  </div>
+</div>
 
 
 <!--   Images container here -->
@@ -150,9 +190,6 @@
       
 
       </div>
-
-
-
       
 
 
@@ -161,6 +198,11 @@
   </div>
 
 </div>
+
+    
+    <% flash.each do |x, y| %>
+      <p class="error-message" id="<%= x %>"><%= y %></p>
+    <% end %>
 
 
 

@@ -40,7 +40,7 @@
          
          	<p class="city-tag"> <%= x.city %></p>
 
-          <img class="property-main-image" src ="<%= x.images[0].thumb.url%>" />
+          <img class="property-main-image" src ="<%= x.images.first %>" />
 
           <h2 class="property-descriptor"> <a href="properties/<%= x.id %>"><%= x.name %></a></h2>
         	

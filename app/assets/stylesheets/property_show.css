@@ -78,6 +78,39 @@
 /*	margin: auto;*/
 }
 
+.booking-dates-container {
+	width: 400px;
+/*	border: 1px dotted gray;*/
+	display: flex;
+	flex-direction: column;
+}
+
+.booking-dates-container-inset {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 400px;
+/*	border: 1px dotted gray;*/
+}
+
+.dates-label {
+	font-size: 20px;
+/*	border: 1px dotted gray;*/
+/*	margin-right: 20px;*/
+}
+
+
+.check-in-filler {
+	width: 23px;
+/*	border: 1px dotted gray;*/
+}
+
+.check-out-filler {
+	width: 10px;
+/*	border: 1px dotted gray;*/
+}
+
 .booking-button-container {
 	width: 100%;
 /*	border: 1px dotted gray;*/
@@ -97,9 +130,23 @@
 	letter-spacing: 1px;
 	cursor: pointer;
 	box-sizing: border-box;
+	padding-top: 2px;
+	padding-left: 10px;
+}
+
+#booking-button-fixed {
 	padding-top: 15px;
 	padding-left: 20px;
 }
+
+.calendar-icon {
+	height: 17px;
+	width: 17px;
+	margin-top: 4px;
+	margin-right: 5px;
+	margin-bottom: 2px;
+}
+
 
 .booking-button:hover {
 	background-color: #710f11;
@@ -147,6 +194,75 @@
 }
 
 
+
+
+/*DATEPICKER STYLES*/
+
+
+.ui-datepicker {
+  width: 300px;
+  height: auto;
+  margin: 10px auto 0;
+  padding: 20px;
+  font: 15px Open Sans, sans-serif;
+  border-radius: 0%;
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1);
+  border-bottom-color: white;
+}
+
+.ui-datepicker a {
+  text-decoration: none;
+}
+
+.ui-datepicker a {
+  text-decoration: none;
+}
+
+.ui-datepicker-title {
+	font-size: 17px;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: #be1e2d;
+
+}
+
+.ui-state-default {
+	border: 0px solid gray !important;
+	background-color: #e5f0d4 !important;
+}
+
+.ui-state-hover {
+	background-color: #b9d989 !important;
+}
+
+.ui-datepicker-header {
+  color: black;
+  font-weight: 400;
+}
+
+.ui-datepicker-prev span, .ui-datepicker-next span {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+/*  text-align: center;*/
+  cursor: pointer;
+  background-image: url('/next_month.png') !important;
+  background-position: 0px 0px !important;
+/*  background-repeat: no-repeat;*/
+  line-height: 200%;
+  overflow: hidden;
+}
+
+.ui-widget-header {
+	background-color: white;
+	border: 3px solid white;
+	text-align: left;
+}
+
+
 /*Responsive stuff below this line*/
 
 
@@ -177,8 +293,12 @@
 
 @media(max-width: 768px) {
 	.info-container {
-		width: 40%;
+		width: 98%;
 		margin-left: 0px;
+	}
+
+	.images-container {
+		width: 100%;
 	}
 
 	.secondary-images-container img {

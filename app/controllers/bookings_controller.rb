@@ -16,7 +16,9 @@ class BookingsController < ApplicationController
 		@booking = @property.bookings.new(booking_params)
 		@bookings = Booking.all
 		current_user.bookings << @booking
+		@user = @booking.user
 		if @booking.save
+			ReservationJob.perform_later
 			redirect_to booking_path(@booking.id)
 		else
 			@booking.errors.messages.each do |x, y|

@@ -15,11 +15,27 @@
 //= require turbolinks
 //= require_tree .
 
-// $("#nav-dropdown").hide();
+// DROPDOWN NAV BAR
 
-$(".mobile-dropdown-button").click(function() {
+    $("#nav-dropdown").hide();
+    // $("#filler-mobile").hide();
 
-	$("#nav-dropdown").toggle(300);
+    $("#mobile-dropdown-button-container").click(function() {
+        // e.preventDefault();
+        $("#nav-dropdown").toggle();
+        $("#filler-mobile").toggle();
+        $(this).toggleClass("green");
 
 
-});
+    });
+
+
+
+// DATEPICKER
+
+    $( function() {
+        $( "#check-in-date" ).datepicker({ minDate: 0, maxDate: "+1M", dateFormat: "yy-mm-dd"} );
+        $( "#check-out-date" ).datepicker({ minDate: 0, maxDate: "+1M", dateFormat: "yy-mm-dd" });
+    });
+
+
