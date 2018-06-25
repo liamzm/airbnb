@@ -37,9 +37,6 @@ ActiveRecord::Schema.define(version: 2018_06_20_111958) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "hosts", force: :cascade do |t|
-  end
-
   create_table "properties", force: :cascade do |t|
     t.string "address", null: false
     t.string "city", null: false
