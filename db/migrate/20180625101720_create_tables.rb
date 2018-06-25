@@ -69,3 +69,4 @@ class CreateTables < ActiveRecord::Migration[5.2]
   add_foreign_key "authentications", "users"
 end
 end
+end
