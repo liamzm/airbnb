@@ -55,6 +55,8 @@ gem 'letter_opener'
 
 gem 'launchy'
 
+gem 'jquery-rails'
+
 
 
 
