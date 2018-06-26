@@ -23,7 +23,7 @@ class BraintreeController < ApplicationController
 	  if result.success?
 	  	@booking.payment_status = true
 	  	@booking.save
-	  	ReservationMailer.reservation_email(@user).deliver
+	  	# ReservationMailer.reservation_email(@user).deliver
 	    redirect_to booking_path(@booking.id)
 	  else
 	    redirect_back(fallback_location: root_path)
