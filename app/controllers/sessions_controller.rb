@@ -24,7 +24,7 @@ class SessionsController < Clearance::SessionsController
   if authentication.user
     user = authentication.user
     authentication.update_token(auth_hash)
-    @next = redirect_to "/properties"
+    # @next = redirect_to "/properties"
     @notice = "Signed in!"
   # else: user logs in with OAuth for the first time
   else
