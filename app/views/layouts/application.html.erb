@@ -5,8 +5,10 @@
     <%= csrf_meta_tags %>
     <%#= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <link href="application.css" rel="stylesheet">
 
     <!-- Load the Client component. -->
     <script src="https://js.braintreegateway.com/web/3.6.3/js/client.min.js"></script>
@@ -18,28 +20,12 @@
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900" rel="stylesheet">
 
-<!--         <script src="https://code.jquery.com/jquery-3.3.1.js" 
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
-    crossorigin="anonymous"></script>
- -->
 
 <!--     Datepicker stylesheets -->
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
 
-<!--   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
-
-
-<!--     <script src="https://code.jquery.com/jquery-3.3.1.js" 
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
-    crossorigin="anonymous"></script> -->
-
-<!--     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="payments.scss"
- -->
 
 
   </head>
@@ -221,7 +207,6 @@
 
 
 
-<!--     <script src="application.js"></script> -->
 
 
   </body>
