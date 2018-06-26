@@ -10,20 +10,19 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
 
-//= require jquery3
+//= require jquery
 //= require jquery_ujs
+//= require_tree .
 
 // DROPDOWN NAV BAR
 
     $("#nav-dropdown").hide();
     // $("#filler-mobile").hide();
 
-    $("#mobile-dropdown-button-container").click(function() {
+    $("#mobile-dropdown-button-container").on("click", function(e){
         // e.preventDefault();
         $("#nav-dropdown").toggle();
         $("#filler-mobile").toggle();
