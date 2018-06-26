@@ -52,7 +52,7 @@ Rails.application.configure do
   port:                 587,
   domain:               'example.com',
   user_name:            'liambnb90@gmail.com',
-  password:             'bnbpassword69',
+  password:             'bnbpassword70!',
   authentication:       'plain',
   enable_starttls_auto: true  }
   
