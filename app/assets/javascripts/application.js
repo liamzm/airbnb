@@ -34,9 +34,9 @@
 
 // DATEPICKER
 
-    $( function() {
-        $( "#check-in-date" ).datepicker({ minDate: 0, maxDate: "+1M", dateFormat: "yy-mm-dd"} );
-        $( "#check-out-date" ).datepicker({ minDate: 0, maxDate: "+1M", dateFormat: "yy-mm-dd" });
-    });
+    // $( function() {
+    //     $( "#check-in-date" ).datepicker({ minDate: 0, maxDate: "+1M", dateFormat: "yy-mm-dd"} );
+    //     $( "#check-out-date" ).datepicker({ minDate: 0, maxDate: "+1M", dateFormat: "yy-mm-dd" });
+    // });
 
 
