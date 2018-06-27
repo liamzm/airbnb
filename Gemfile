@@ -56,6 +56,10 @@ gem 'launchy'
 
 gem 'jquery-rails'
 
+gem 'aws-sdk-rails'
+
+gem 'carrierwave-aws'
+
 
 
 
